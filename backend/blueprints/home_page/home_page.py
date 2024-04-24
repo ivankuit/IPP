@@ -13,11 +13,6 @@ def index():
     return render_template('index.html')
 
 
-@page_bp.route('/overview', methods=['GET'])
-def overview():
-    return render_template('overview.html')
-
-
 @page_bp.route('/ms3', methods=['GET'])
 def ms3():
     scenario = Scenario(method_name=MS3)
