@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KPI Dashboard</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        .chart-placeholder {
+            width: 100%;
+            height: auto;
+            background-color: #f0f0f0;
+            margin-bottom: 20px;
+            display: block;
+            justify-content: inherit;
+            align-items: center;
+        }
+
+        .kpi-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 0 20px;
+        }
+
+        .kpi {
+            flex: 0 1 calc(33.333% - 20px);
+            box-sizing: border-box;
+            margin: 10px;
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .kpi-number {
+            color: #ff6f61;
+            font-size: 2em;
+            margin: 0;
+        }
+
+        .kpi-title {
+            margin: 5px 0;
+            font-weight: bold;
+        }
+
+        .kpi-description {
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .kpi {
+                flex: 0 1 calc(50% - 20px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .kpi {
+                flex: 0 1 calc(100% - 20px);
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <a href="/" style="text-decoration: none; color: inherit; vertical-align: middle;">&#8592;</a>
+
+    <h1 style="display: inline; margin-left: 10px;">KPI Dashboard</h1>
+
+</header>
+
+<div class="chart-placeholder">
+    <span> {{ plot_div|safe }}</span>
+
+</div>
+
+<div class="kpi-container">
+    <!-- KPI items go here -->
+    <div class="kpi">
+        <p class="kpi-number">{{DECLARED}} kW</p>
+        <p class="kpi-title">Declared</p>
+        <p class="kpi-description">Kilowatts Declared to Eskom</p>
+    </div>
+    <div class="kpi">
+        <p class="kpi-number">{{ACTUAL}} kW</p>
+        <p class="kpi-title">Actual</p>
+        <p class="kpi-description">Actual kilowatts sold to Eskom</p>
+    </div>
+    <div class="kpi">
+        <p class="kpi-number">{{SHORTFALL}} kW</p>
+        <p class="kpi-title">Shortfall</p>
+        <p class="kpi-description">The number of kilowatts by which we under produced and missed the declaration</p>
+    </div>
+    <div class="kpi">
+        <p class="kpi-number">R {{REVENUE}}</p>
+        <p class="kpi-title">Revenue</p>
+        <p class="kpi-description">The amount of ZAR billable to Eskom before penalties</p>
+    </div>
+    <div class="kpi">
+        <p class="kpi-number">R {{PENALTY}}</p>
+        <p class="kpi-title">Penalties</p>
+        <p class="kpi-description">Penalties imposed by Eskom due to under delivery of energy</p>
+    </div>
+    <div class="kpi">
+        <p class="kpi-number">{{CURTAILED}} kW</p>
+        <p class="kpi-title">Curtailed</p>
+        <p class="kpi-description">The amount of energy lost due to lack of storage and sales capacity</p>
+    </div>
+</div>
+
+</body>
+</html>

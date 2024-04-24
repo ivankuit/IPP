@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renewable Energy Plant</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 80%;
+            max-width: 600px;
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        .button {
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #2ecc71;
+        }
+        .tech-stack {
+            text-align: left;
+            margin-top: 20px;
+        }
+        .tech-stack h2 {
+            margin-top: 0;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        .highlight {
+            font-weight: bold;
+            color: #27ae60;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>IPP - Renewable Energy Plant Management</h1>
+        <a href="/overview"><button class="button">Overview</button></a>
+        <a href="/ms3"><button class="button">Moving Sum (3 hours)</button></a>
+        <a href="/bo3"><button class="button">Best of 3 hours</button></a>
+
+        <!-- Tech Stack Section -->
+        <div class="tech-stack">
+            <h2>Technology Stack</h2>
+            <ul>
+                <li><span class="highlight">Front-end: Flask templating using Jinja2</span> Flask</li>
+                <li><span class="highlight">Back-end: Flask, SQLAlchemy</span> Flask (Python)</li>
+                <li><span class="highlight">Database:</span> SQLlite</li>
+                <li><span class="highlight">APIs:</span> Custom APIs for data handling</li>
+                <li><span class="highlight">Version Control:</span> Git, GitHub</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
